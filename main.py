@@ -43,6 +43,6 @@ async def prediction(input: dict = Body(...)):
 
     encoder = pickle.load(open('enc.pkl', 'rb'))
 
-    labels1 = encoder.inverse_transform(y_pred[:]) 
+    labels1 = list(encoder.inverse_transform(y_pred)) 
 
     return labels1
